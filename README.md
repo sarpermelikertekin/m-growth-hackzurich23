@@ -3,13 +3,26 @@ Awesome Project for HackZurich23 with Migros
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+These instructions will help you set up and run the project on your local machine.
 
-A few resources to get you started if this is your first Flutter project:
+### Prerequisites
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Before you begin, ensure you have met the following requirements:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- [Python](https://www.python.org/downloads/) (version X.X.X)
+- [pip](https://pip.pypa.io/en/stable/installation/) (version X.X.X)
+- [virtualenv](https://pypi.org/project/virtualenv/) (optional but recommended)
+
+### Installation
+
+1. Clone the repository:
+   git clone https://github.com/sarpermelikertekin/m-growth-hackzurich23.git
+2. Navigate to the project directory:
+   cd m-growth-hackzurich23
+3. Install the project dependencies:
+   pip install -r requirements.txt
+
+### Running the Application
+
+After successfully installing the dependencies, you can start the Streamlit application with the following command:
+   streamlit run app.py
