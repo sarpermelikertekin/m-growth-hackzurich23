@@ -1,14 +1,19 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
 
-# Custom state initialization
-
 
 def _init_state():
     st.session_state.setdefault("input_fields", [""])
     st.session_state.setdefault("shopping_items", [])
+    st.session_state.setdefault("ingridients", ["Fish", "Tomato", "Onion"])
+    st.session_state.setdefault(
+        "products", ["MBudget Fish", "MBudget Tomato", "MBudget Onion"])
+
     # Flag to control visibility of input fields
     st.session_state.setdefault("show_fields", True)
+    st.session_state.setdefault("show_ingridients", False)
+    st.session_state.setdefault("show_products", False)
+
 
 # The main function to run the app
 
@@ -55,6 +60,21 @@ def main():
         st.subheader("Shopping List:")
         for item in st.session_state.shopping_items:
             st.write(item)
+
+    if selected2 == 'Cook':
+        st.subheader("What do you want to cook?")
+        st.text_input("")
+        if st.button("Create Ingridients"):
+            st.session_state.show_ingridients = True  # Show ingridients
+        if st.session_state.show_ingridients:
+            st.subheader("Ingridients:")
+            for item in st.session_state.ingridients:
+                st.write(item)
+            if st.button("Show Products"):
+                st.session_state.show_products = True  # Show ingridients
+                st.subheader("Products:")
+                for item in st.session_state.products:
+                    st.write(item)
 
 
 # Call the main function
