@@ -20,17 +20,23 @@ def _init_state():
 
 def main():
 
+    # Initialize session state
+    _init_state()
+
     selected2 = option_menu(None, ["Shop", "Cook"],
                             icons=["shop", "list-task"],
                             menu_icon="cast", default_index=0, orientation="horizontal")
 
     st.title(selected2)
 
-    st.sidebar.title("About")
-    st.sidebar.text("This is an emulated multi-tab Q&A interface.")
+    st.sidebar.title("User Preferences")
+    st.sidebar.write("Let us recommend the best products for you")
 
-    # Initialize session state
-    _init_state()
+    # Add a slider to the sidebar
+    sustainability_score = st.sidebar.slider('Sustainability', 1, 5, 3)
+
+    # Add a slider to the sidebar
+    price_score = st.sidebar.slider('Price', 1, 5, 3)
 
     if selected2 == 'Shop':
 
@@ -71,7 +77,7 @@ def main():
             for item in st.session_state.ingridients:
                 st.write(item)
             if st.button("Show Products"):
-                st.session_state.show_products = True  # Show ingridients
+                st.session_state.show_products = True  # Show products
                 st.subheader("Products:")
                 for item in st.session_state.products:
                     st.write(item)
